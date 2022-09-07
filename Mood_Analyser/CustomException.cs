@@ -12,6 +12,8 @@ namespace Mood_Analyser
         {
             NULL_MESSAGE,
             EMPTY_MESSAGE,
+             NO_SUCH_CLASS,
+            NO_SUCH_METHOD
         }
         private readonly ExceptionType type;
         public CustomException(ExceptionType Type, String message) : base(message)
