@@ -34,5 +34,23 @@ namespace Mood_Analyser
                 return "HAPPY";
             }
         }
+        public string AnalyseMoodLive()
+        {
+            try
+            {
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new CustomException(CustomException.ExceptionType.EMPTY_MESSAGE, "mood should not be empty");
+                }
+                if (this.message.Contains("sad"))
+                    return "SAD";
+                else
+                    return "HAPPY";
+            }
+            catch (NullReferenceException)
+            {
+                throw new CustomException(CustomException.ExceptionType.NULL_MESSAGE, "mood should not be null");
+            }
+        }
     }
 }
